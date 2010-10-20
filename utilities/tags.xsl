@@ -31,10 +31,10 @@
 	<!-- Anchor for each tag -->
 	<a href="{uri}" title="{topics} topics" class="tag-link-{@id}" rel="tag" style="font-size: {$fontsize}pt;">
 		<xsl:if test="$color != ''">
-			<xsl:attribute name="color"><xsl:value-of select="$color"/></xsl:attribute>
+			<xsl:attribute name="color"><xsl:value-of select="concat('0x', substring-after($color, '#'))"/></xsl:attribute>
 		</xsl:if>
 		<xsl:if test="$hicolor != ''">
-			<xsl:attribute name="hicolor"><xsl:value-of select="$hicolor"/></xsl:attribute>
+			<xsl:attribute name="hicolor"><xsl:value-of select="concat('0x', substring-after($hicolor, '#'))"/></xsl:attribute>
 		</xsl:if>
 		<xsl:value-of select="tag"/>
 	</a>
